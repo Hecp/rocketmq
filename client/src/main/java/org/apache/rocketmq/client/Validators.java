@@ -32,6 +32,7 @@ import org.apache.rocketmq.common.protocol.ResponseCode;
 public class Validators {
     public static final String VALID_PATTERN_STR = "^[%|a-zA-Z0-9_-]+$";
     public static final Pattern PATTERN = Pattern.compile(VALID_PATTERN_STR);
+    // 消费分组名称最大长度为255
     public static final int CHARACTER_MAX_LENGTH = 255;
 
     /**

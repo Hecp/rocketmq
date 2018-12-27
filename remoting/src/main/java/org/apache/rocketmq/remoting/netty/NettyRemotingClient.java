@@ -190,6 +190,7 @@ public class NettyRemotingClient extends NettyRemotingAbstract implements Remoti
                 }
             });
 
+        // 每隔1秒清理过期弃用请求
         this.timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {

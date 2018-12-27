@@ -52,6 +52,7 @@ public class MQClientManager {
                 new MQClientInstance(clientConfig.cloneClientConfig(),
                     this.factoryIndexGenerator.getAndIncrement(), clientId, rpcHook);
             MQClientInstance prev = this.factoryTable.putIfAbsent(clientId, instance);
+            // 如果已经存在相同实例，则返回已有实例，并打印warn日志
             if (prev != null) {
                 instance = prev;
                 log.warn("Returned Previous MQClientInstance for clientId:[{}]", clientId);
